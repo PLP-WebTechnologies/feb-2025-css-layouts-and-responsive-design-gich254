@@ -1,0 +1,81 @@
+/* Reset default margins and ensure full height */
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-rows: auto 1fr auto; /* Header and footer take needed space, main expands */
+    min-height: 100vh; /* Full viewport height */
+  }
+  
+  /* Assign grid areas */
+  header {
+    grid-area: header;
+    background-color: #0f6485;
+    padding: 10px 0;
+  }
+  
+  main {
+    grid-area: main;
+  }
+  
+  footer {
+    grid-area: footer;
+    background-color: #14b321;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  /* Container for centering and max-width */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Navigation bar with Flexbox */
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Spacing between sections */
+  section {
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design with Media Queries */
+  
+  /* Mobile: Navigation stacks vertically */
+  @media (max-width: 767px) {
+    nav ul {
+      flex-direction: column;
+    }
+    nav li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Tablet and Desktop: Main content in two columns */
+  @media (min-width: 768px) {
+    main .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+      gap: 20px; /* Space between grid items */
+    }
+  }
